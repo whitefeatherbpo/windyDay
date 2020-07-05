@@ -16,10 +16,14 @@ public class JDBCPrac {
 		
 		Statement stm=con.createStatement();
 		
-		ResultSet rst=stm.executeQuery("Select first_name, last_name from employees");
+		ResultSet rst=stm.executeQuery("Select * from employees");
+		System.out.println("FirstName\tSalary");
 		
-		System.out.println(rst);
-
+		while (rst.next()) {
+		
+			System.out.println(rst.getString(2)+"   "+ rst.getInt(8));
+		}
+		
 	}
 
 }
